@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Tobias Quinn	"
+      user-mail-address "tobias@tobiasquinn.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -74,7 +74,7 @@
 (setq clojure-indent-style :always-indent)
 
 ;; bind svelte mode
-(add-to-list 'auto-mode-alist '("\\.svelte$" . svelte-mode))
+;;(add-to-list 'auto-mode-alist '("\\.svelte$" . svelte-mode))
 
 (defun er-indent-buffer ()
   "Indent the currently visited buffer."
@@ -87,4 +87,10 @@
 (setq js-indent-level 2)
 
 (remove-hook! (prog-mode text-mode conf-mode special-mode) hl-line-mode)
-(setq confirm-kill-emacs nil)
+;;(setq confirm-kill-emacs nil)
+
+;; elixir_ls
+(setq exec-path (append exec-path '("/home/tobias/sourcecode/elixir-ls/release")))
+
+;; stop the hollow cursor on selection
+(setq evil-visual-state-cursor 'box)
