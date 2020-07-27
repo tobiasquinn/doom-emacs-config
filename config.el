@@ -33,7 +33,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type nil)
+;;(setq display-line-numbers-type nil)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -53,22 +53,22 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-; scroll using meta key
+;; scroll using meta key
 (global-set-key (kbd "M-<up>") 'scroll-down-line)
 (global-set-key (kbd "M-<down>") 'scroll-up-line)
-; home, end using meta key
+;; home, end using meta key
 (global-set-key (kbd "M-<left>") 'beginning-of-line)
 (global-set-key (kbd "M-<right>") 'end-of-line)
 
-; window switch using cursor keys
+;; window switch using cursor keys
 (eval-after-load "evil"
- '(progn
-    (define-key evil-normal-state-map (kbd "C-w <left>") 'evil-window-left)
-    (define-key evil-normal-state-map (kbd "C-w <right>") 'evil-window-right)
-    (define-key evil-normal-state-map (kbd "C-w <up>") 'evil-window-up)
-    (define-key evil-normal-state-map (kbd "C-w <down>") 'evil-window-down)
-    (define-key evil-normal-state-map (kbd "C-w o") 'delete-other-windows)
-    (evil-set-initial-state 'magit-mode 'emacs)))
+  '(progn
+     (define-key evil-normal-state-map (kbd "C-w <left>") 'evil-window-left)
+     (define-key evil-normal-state-map (kbd "C-w <right>") 'evil-window-right)
+     (define-key evil-normal-state-map (kbd "C-w <up>") 'evil-window-up)
+     (define-key evil-normal-state-map (kbd "C-w <down>") 'evil-window-down)
+     (define-key evil-normal-state-map (kbd "C-w o") 'delete-other-windows)
+     (evil-set-initial-state 'magit-mode 'emacs)))
 
 ;; clojure indent style
 (setq clojure-indent-style :always-indent)
@@ -86,7 +86,7 @@
 
 (setq js-indent-level 2)
 
-(remove-hook! (prog-mode text-mode conf-mode special-mode) hl-line-mode)
+;;(remove-hook! (prog-mode text-mode conf-mode special-mode) hl-line-mode)
 ;;(setq confirm-kill-emacs nil)
 
 ;; elixir_ls
@@ -94,3 +94,6 @@
 
 ;; stop the hollow cursor on selection
 (setq evil-visual-state-cursor 'box)
+
+(eval-after-load "hl-line"
+  '(set-face-background 'hl-line "#333333"))
