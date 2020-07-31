@@ -29,7 +29,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Dropbox/Orgzly")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -95,5 +95,5 @@
 ;; stop the hollow cursor on selection
 (setq evil-visual-state-cursor 'box)
 
-(eval-after-load "hl-line"
-  '(set-face-background 'hl-line "#333333"))
+(after! hl-line (set-face-background 'hl-line "#333333"))
+(after! clojure-mode (show-paren-mode 1))
