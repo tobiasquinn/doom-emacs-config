@@ -97,3 +97,6 @@
 
 (after! hl-line (set-face-background 'hl-line "#333333"))
 (after! clojure-mode (show-paren-mode 1))
+
+(setq x-select-enable-primary t)
+(setq x-select-enable-clipboard nil)
