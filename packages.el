@@ -49,3 +49,4 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 ;;(package! svelte-mode)
+(package! evil-visual-replace)
