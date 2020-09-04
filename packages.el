@@ -50,3 +50,5 @@
 ;(unpin! t)
 ;;(package! svelte-mode)
 (package! evil-visual-replace)
+(package! graphql-mode)
+(package! sqlup-mode)

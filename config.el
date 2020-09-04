@@ -100,3 +100,8 @@
 
 (setq x-select-enable-primary t)
 (setq x-select-enable-clipboard nil)
+
+(map! :leader :desc "Open Work org-mode"
+      "o w" (lambda () (interactive) (find-file "~/Dropbox/Orgzly/Work.org")))
+
+(add-hook 'sql-mode-hook 'sqlup-mode)
