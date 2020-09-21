@@ -52,3 +52,4 @@
 (package! evil-visual-replace)
 (package! graphql-mode)
 (package! sqlup-mode)
+(package! uuid)

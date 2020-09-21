@@ -105,3 +105,11 @@
       "o w" (lambda () (interactive) (find-file "~/Dropbox/Orgzly/Work.org")))
 
 (add-hook 'sql-mode-hook 'sqlup-mode)
+
+;; insert uuid
+(defun uuid-insert()
+  (interactive)
+  (require 'uuid)
+  (insert (upcase (uuid-string))))
+
+(global-set-key (kbd "C-c C-'") 'uuid-insert)
