@@ -53,3 +53,4 @@
 (package! graphql-mode)
 (package! sqlup-mode)
 (package! uuid)
+(package! todoist) ;; add todoist-token var in tokens.el
