@@ -25,7 +25,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'deeper-blue)
+(load-theme 'deeper-blue)
+;;(setq doom-theme 'deeper-blue)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -149,3 +150,14 @@
   ;;(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
   (setq org-todo-keywords
         '((sequence "TODO" "STRT" "WAIT" "HOLD" "|" "DONE"))))
+
+;; clubhouse
+(use-package! org-clubhouse)
+(after! org-clubhouse
+  (load "~/.doom.d/tokens.el"))
+
+(after! circe
+  (load "~/.doom.d/tokens.el"))
+
+(setq lsp-enable-file-watchers t)
+(setq lsp-file-watch-threshold 10000)
