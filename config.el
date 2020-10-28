@@ -161,3 +161,13 @@
 
 (setq lsp-enable-file-watchers t)
 (setq lsp-file-watch-threshold 10000)
+
+;;;; lh panel running clojure repl and rh code, use from required clojure buffer
+(defun my/setup-cider-repl-windows ()
+  (delete-other-windows)
+  (cider-switch-to-repl-buffer)
+  (delete-other-windows)
+  (cider-switch-to-last-clojure-buffer))
+
+(map! :map clojure-mode-map
+      :m "C-c C-a" (lambda () (interactive) (my/setup-cider-repl-windows)))
