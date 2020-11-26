@@ -112,7 +112,7 @@
 (defun uuid-insert()
   (interactive)
   (require 'uuid)
-  (insert (upcase (uuid-string))))
+  (insert (uuid-string)))
 
 (global-set-key (kbd "C-c C-'") 'uuid-insert)
 
