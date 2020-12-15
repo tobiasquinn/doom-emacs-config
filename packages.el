@@ -53,10 +53,5 @@
 (package! graphql-mode)
 (package! sqlup-mode)
 (package! uuid)
-(package! todoist) ;; add todoist-token var in tokens.el
-(package! org-clubhouse
-  :recipe (:host github
-           :repo "glittershark/org-clubhouse"
-           :files ("*")))
 (package! ox-slack)
 (package! vala-mode)

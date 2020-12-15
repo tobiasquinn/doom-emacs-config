@@ -21,7 +21,8 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "Ubuntu Mono" :size 20))
+(if (eq system-type 'darwin)
+    (setq doom-font (font-spec :family "Monaco" :size 14)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -116,10 +117,7 @@
 
 (global-set-key (kbd "C-c C-'") 'uuid-insert)
 
-;; todoist config
-(after! todoist (load "~/.doom.d/tokens.el"))
-
-;; TODO states and checkbox handling
+;; this manages TODO states and checkbox handling
 (defun my/org-checkbox-todo ()
   "Switch header TODO state to DONE when all checkboxes are ticked, to TODO otherwise"
   (let ((todo-state (org-get-todo-state)) beg end)
@@ -152,14 +150,6 @@
   (setq org-todo-keywords
         '((sequence "TODO" "STRT" "WAIT" "HOLD" "|" "DONE"))))
 
-;; clubhouse
-(use-package! org-clubhouse)
-(after! org-clubhouse
-  (load "~/.doom.d/tokens.el"))
-
-(after! circe
-  (load "~/.doom.d/tokens.el"))
-
 (setq lsp-enable-file-watchers t)
 (setq lsp-file-watch-threshold 10000)
 
@@ -172,3 +162,6 @@
 
 (map! :map clojure-mode-map
       :m "C-c C-a" (lambda () (interactive) (my/setup-cider-repl-windows)))
+
+(when (eq system-type 'darwin)
+  (load "~/.doom.d/mac.el"))
