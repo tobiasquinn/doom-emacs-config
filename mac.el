@@ -37,6 +37,7 @@
 (map! "s-v" #'clipboard-yank)
 (map! "<home>" #'beginning-of-line)
 (map! "<end>" #'end-of-line)
+(map! "s-n" #'evil-complete-next)
 
 (setq select-enable-primary t)
 (setq select-enable-clipboard nil)
