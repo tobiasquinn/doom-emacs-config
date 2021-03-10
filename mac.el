@@ -15,7 +15,7 @@
         "<s-right>" #'right-word
         "<s-left>" #'left-word))
 
-(when-let (dims (doom-store-get 'last-frame-size))
+(when-let (dims (doom-store-get 'last-frame-size doom-store-location))
   (cl-destructuring-bind ((left . top) width height fullscreen) dims
     (setq initial-frame-alist
           (append initial-frame-alist
