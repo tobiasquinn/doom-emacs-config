@@ -88,12 +88,15 @@
 (global-set-key (kbd "C-S-i") #'er-indent-buffer)
 
 (setq js-indent-level 2)
+(setq web-mode-markup-indent-offset 2)
 
 ;;(remove-hook! (prog-mode text-mode conf-mode special-mode) hl-line-mode)
 ;;(setq confirm-kill-emacs nil)
 
 ;; elixir_ls
-(setq exec-path (append exec-path '("/home/tobias/sourcecode/elixir-ls/release")))
+(if (eq system-type 'darwin)
+    (setq exec-path (append exec-path '("/Users/tobias/sourcecode/elixir-ls/release")))
+  (setq exec-path (append exec-path '("/home/tobias/sourcecode/elixir-ls/release"))))
 
 ;; stop the hollow cursor on selection
 (setq evil-visual-state-cursor 'box)
