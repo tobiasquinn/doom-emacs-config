@@ -166,5 +166,9 @@
 (map! :map clojure-mode-map
       :m "C-c C-a" (lambda () (interactive) (my/setup-cider-repl-windows)))
 
+;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
+(add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+
 (when (eq system-type 'darwin)
   (load "~/.doom.d/mac.el"))
