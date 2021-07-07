@@ -170,5 +170,7 @@
 (add-hook 'elixir-mode-hook
           (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
 
+(after! git-gutter-fringe (fringe-mode 4))
+
 (when (eq system-type 'darwin)
   (load "~/.doom.d/mac.el"))
