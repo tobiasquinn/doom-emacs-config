@@ -172,5 +172,10 @@
 
 (after! git-gutter-fringe (fringe-mode 4))
 
+;; magit don't complain about long commit messages
+;;(after! magit-mode
+;;	(setq git-commit-style-convention-checks
+;;	 (remove 'overlong-summary-line git-commit-style-convention-checks)))
+
 (when (eq system-type 'darwin)
   (load "~/.doom.d/mac.el"))

@@ -41,3 +41,6 @@
 
 (setq select-enable-primary t)
 (setq select-enable-clipboard nil)
+(after! elixir-mode
+  '(defun elixir-format--mix-executable ()
+     (string-trim-right (shell-command-to-string "asdf which mix"))))
